@@ -1,0 +1,2 @@
+%_buildrootdir          %{_topdir}/BUILDROOT
+%buildroot              %{_buildrootdir}/%{name}-%{version}-%{release}.%{_arch}

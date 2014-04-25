@@ -3,6 +3,7 @@ FROM tianon/centos:5.10
 ADD devtools-1.1.repo /etc/yum.repos.d/
 ADD epel-release-5-4.noarch.rpm /tmp/
 ADD virtualenv-1.11.4.tar.gz /tmp/
+ADD .rpmmacros /
 
 RUN echo multilib_policy=best >> /etc/yum.conf
 RUN rpm -ivh /tmp/epel-release-5-4.noarch.rpm
