@@ -16,6 +16,7 @@ RUN ln -sn ctest28 /usr/bin/ctest
 RUN (cd /tmp/virtualenv-1.11.4; scl enable devtoolset-1.1 'python26 setup.py install')
 RUN virtualenv ~/venv
 RUN echo "source ~/venv/bin/activate; scl enable devtoolset-1.1 'pip install buildbot-slave'" | /bin/bash
+RUN echo "source ~/venv/bin/activate; scl enable devtoolset-1.1 'pip install --egg scons'" | /bin/bash
 
 ADD go1.4.linux-amd64.tar.gz /usr/local
 ENV PATH /usr/local/go/bin:$PATH
