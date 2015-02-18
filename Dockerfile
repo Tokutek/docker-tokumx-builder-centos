@@ -8,7 +8,7 @@ ADD .rpmmacros /
 RUN echo multilib_policy=best >> /etc/yum.conf
 RUN rpm -ivh /tmp/epel-release-5-4.noarch.rpm
 RUN yum groupinstall -y 'Development Tools'
-RUN yum install -y devtoolset-2 rpmdevtools git cmake28 ccache zlib-devel libpcap-devel pcre-devel openssl-devel readline-devel devtoolset-2-valgrind-devel python26 python26-devel buildsys-macros scons
+RUN yum install -y devtoolset-2 rpmdevtools git cmake28 ccache zlib-devel libpcap-devel pcre-devel openssl-devel readline-devel devtoolset-2-valgrind-devel python26 python26-devel buildsys-macros scons make
 
 RUN ln -sn cmake28 /usr/bin/cmake
 RUN ln -sn cpack28 /usr/bin/cpack
