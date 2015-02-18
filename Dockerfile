@@ -6,9 +6,11 @@ ADD epel-release-6-8.noarch.rpm /tmp/
 RUN echo multilib_policy=best >> /etc/yum.conf
 RUN rpm -ivh /tmp/epel-release-6-8.noarch.rpm
 RUN yum groupinstall -y 'Development Tools'
-RUN yum install -y devtoolset-1.1 rpmdevtools git cmake28 ccache zlib-devel libpcap-devel pcre-devel openssl-devel readline-devel valgrind-devel python-devel python-pip
+RUN yum install -y devtoolset-1.1 rpmdevtools git cmake28 ccache zlib-devel libpcap-devel pcre-devel openssl-devel readline-devel valgrind-devel python-devel python-pip make
 
 RUN ln -sn cmake28 /usr/bin/cmake
+RUN ln -sn cpack28 /usr/bin/cpack
+RUN ln -sn ctest28 /usr/bin/ctest
 RUN scl enable devtoolset-1.1 'pip install buildbot-slave'
 
 WORKDIR /data
